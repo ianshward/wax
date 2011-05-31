@@ -13,22 +13,22 @@ ext:
 lint:
 	./node_modules/.bin/jshint control/lib/*.js control/mm/*.js --config=jshint.json
 
-build/wax.ol.min.js:
+built/wax.ol.min.js:
 	cat lib/*.js control/lib/*.js control/ol/*.js > built/wax.ol.js
 	$(UGLIFYJS) built/wax.ol.js > built/wax.ol.min.js
 
-build/wax.g.min.js:
+built/wax.g.min.js:
 	cat lib/*.js control/lib/*.js control/g/*.js connectors/g/*.js > built/wax.g.js
 	$(UGLIFYJS) built/wax.g.js > built/wax.g.min.js
 
-build/wax.mm.min.js:
+built/wax.mm.min.js:
 	cat ext/reqwest.min.js lib/*.js control/lib/*.js control/mm/*.js connectors/mm/*.js > built/wax.mm.js
 	$(UGLIFYJS) built/wax.mm.js > built/wax.mm.min.js
 
 build_setup:
 	mkdir built
 
-build: build_setup build/wax.ol.min.js build/wax.g.min.js build/wax.mm.min.js lint
+build: build_setup built/wax.ol.min.js built/wax.g.min.js built/wax.mm.min.js lint
 
 
 clean:
