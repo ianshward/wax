@@ -30,7 +30,5 @@ build_setup:
 
 build: build_setup build/wax.ol.min.js build/wax.g.min.js build/wax.mm.min.js lint
 
-clean:
-	rm -rf build
 
-.PHONY: ext doc clean
+.PHONY: ext doc
