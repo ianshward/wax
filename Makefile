@@ -26,7 +26,7 @@ build/wax.mm.min.js:
 	$(UGLIFYJS) built/wax.mm.js > built/wax.mm.min.js
 
 build_setup:
-	mkdir build
+	mkdir built
 
 build: build_setup build/wax.ol.min.js build/wax.g.min.js build/wax.mm.min.js lint
 
